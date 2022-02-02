@@ -23,7 +23,7 @@ namespace DoubleDuel
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
             var context = new DoubleDuelsContext();
-            //qwe
+            var pudge = new Hero();
             /*User User = new User()
             {
                 Login = "AndreyZolo2008",
