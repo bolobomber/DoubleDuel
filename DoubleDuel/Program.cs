@@ -23,21 +23,7 @@ namespace DoubleDuel
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
             var context = new DoubleDuelsContext();
-            Hero pudge = new Hero()
-            {
-                Name = "Pudge",
-                hp = 2000,
-                Skills = new List<Skill>()
-                {
-                    new Skill()
-                    {
-                        Name = "rot",
-                        Damge = 50,
-                    }
-                }
-            };
-            context.Heroes.Add(pudge);
-            context.SaveChanges();
+            //qwe
             /*User User = new User()
             {
                 Login = "AndreyZolo2008",
