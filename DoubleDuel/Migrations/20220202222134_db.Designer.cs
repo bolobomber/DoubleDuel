@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DoubleDuel.Migrations
 {
     [DbContext(typeof(DoubleDuelsContext))]
-    [Migration("20220128150637_DoubleDuel")]
-    partial class DoubleDuel
+    [Migration("20220202222134_db")]
+    partial class db
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,16 +27,15 @@ namespace DoubleDuel.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("StaticHeroId")
+                        .HasColumnType("int");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("hp")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("StaticHeroId");
 
                     b.HasIndex("UserId");
 
@@ -53,7 +52,27 @@ namespace DoubleDuel.Migrations
                     b.Property<int>("Damge")
                         .HasColumnType("int");
 
-                    b.Property<int>("HeroId")
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("StaticHeroId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StaticHeroId");
+
+                    b.ToTable("Skills");
+                });
+
+            modelBuilder.Entity("DoubleDuel.Entities.StaticHero", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("Hp")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -61,9 +80,7 @@ namespace DoubleDuel.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("HeroId");
-
-                    b.ToTable("Skills");
+                    b.ToTable("StaticHeroes");
                 });
 
             modelBuilder.Entity("DoubleDuel.Entities.User", b =>
@@ -86,28 +103,38 @@ namespace DoubleDuel.Migrations
 
             modelBuilder.Entity("DoubleDuel.Entities.Hero", b =>
                 {
+                    b.HasOne("DoubleDuel.Entities.StaticHero", "StaticHero")
+                        .WithMany("Heroes")
+                        .HasForeignKey("StaticHeroId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("DoubleDuel.Entities.User", "User")
                         .WithMany("Heroes")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("StaticHero");
+
                     b.Navigation("User");
                 });
 
             modelBuilder.Entity("DoubleDuel.Entities.Skill", b =>
                 {
-                    b.HasOne("DoubleDuel.Entities.Hero", "Hero")
+                    b.HasOne("DoubleDuel.Entities.StaticHero", "StaticHero")
                         .WithMany("Skills")
-                        .HasForeignKey("HeroId")
+                        .HasForeignKey("StaticHeroId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Hero");
+                    b.Navigation("StaticHero");
                 });
 
-            modelBuilder.Entity("DoubleDuel.Entities.Hero", b =>
+            modelBuilder.Entity("DoubleDuel.Entities.StaticHero", b =>
                 {
+                    b.Navigation("Heroes");
+
                     b.Navigation("Skills");
                 });
 

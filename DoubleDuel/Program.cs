@@ -16,39 +16,21 @@ namespace DoubleDuel
         [STAThread]
         static void Main()
         {
-           
+
 
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
             var context = new DoubleDuelsContext();
-            var pudge = new Hero();
-            /*User User = new User()
+          /*  
+           *  андрей гей 
+           *  var Pudge = new Hero()
             {
-                Login = "AndreyZolo2008",
-                Password = "1234",
-                Heroes = new List<Hero>() {
-                    new Hero(){
-                        Name = "Axe",
-                        hp = 1000,
-                            Skills = new List<Skill>()
-                            {
-                                new Skill()
-                                {
-                                    Name = "Axe Ataks!",
-                                    Damge = 100
-
-                                }
-                            }
-
-                     }
-                 }
+                StaticHeroId = 123
             };
-
-            context.Users.Add(User);
-            context.SaveChanges();
-            */
+          
+           */
         }
     }
 }

@@ -21,6 +21,7 @@ namespace DoubleDuel
 
         public DbSet<User> Users { get; set; }
         public DbSet<Hero> Heroes{ get; set; }
+        public DbSet<StaticHero> StaticHeroes { get; set; }
         public DbSet<Skill> Skills{ get; set; }
        
        
