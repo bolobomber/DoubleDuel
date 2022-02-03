@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DoubleDuel.Entities
+namespace DoubleDuel.DAL.Entities
 {
     public class Hero
     {

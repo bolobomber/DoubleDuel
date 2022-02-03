@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace DoubleDuel.Migrations
+namespace DoubleDuel.DAL.Migrations
 {
     [DbContext(typeof(DoubleDuelsContext))]
     [Migration("20220202222134_db")]

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace DoubleDuel.Migrations
+namespace DoubleDuel.DAL.Migrations
 {
     [DbContext(typeof(DoubleDuelsContext))]
     partial class DoubleDuelsContextModelSnapshot : ModelSnapshot

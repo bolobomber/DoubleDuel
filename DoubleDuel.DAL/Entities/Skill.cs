@@ -1,4 +1,4 @@
-﻿namespace DoubleDuel.Entities
+﻿namespace DoubleDuel.DAL.Entities
 {
     public class Skill
     {   

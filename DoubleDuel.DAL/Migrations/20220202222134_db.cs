@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace DoubleDuel.Migrations
+namespace DoubleDuel.DAL.Migrations
 {
     public partial class db : Migration
     {

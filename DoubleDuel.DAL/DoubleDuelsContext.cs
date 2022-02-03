@@ -1,7 +1,7 @@
-﻿using DoubleDuel.Entities;
+﻿using DoubleDuel.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace DoubleDuel
+namespace DoubleDuel.DAL
 {
     public class DoubleDuelsContext : DbContext
     {

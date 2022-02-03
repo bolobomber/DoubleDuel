@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DoubleDuel.Entities;
-
+using DoubleDuel.DAL;
 
 namespace DoubleDuel
 {
@@ -16,21 +15,51 @@ namespace DoubleDuel
         [STAThread]
         static void Main()
         {
-
-
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new StartForm());
             var context = new DoubleDuelsContext();
-          /*  
-           *  андрей гей 
-           *  var Pudge = new Hero()
-            {
-                StaticHeroId = 123
+            /* var Pudge = new StaticHero()
+             {
+                 Name = "Pudge",
+                 Hp = 2000,
+                 Skills = new List<Skill>()
+                 {
+                     new Skill()
+                     {
+                         Name = "Hook",
+                         Damge = 140,
+                     },
+                     new Skill()
+                     {
+                         Name = "Rot",
+                         Damge = 20
+                     }
+                 }
+             };
+             context.Add(Pudge);
+             context.SaveChanges();
+             */
+           /* var user = new User()
+            {   
+                Login = "AndreyYevrey",
+                Password = "123vladsosi",
+                Heroes = new List<Hero>()
+                {
+                   new Hero()
+                   {
+                     StaticHeroId = context.StaticHeroes.Where(hero => hero.Name == "Pudge" )
+                                                        .Select(hero => hero.Id)
+                                                        .FirstOrDefault()
+                   }
+                }
             };
-          
-           */
+            context.Add(user);
+            context.SaveChanges();
+            */
+
+
         }
     }
 }
