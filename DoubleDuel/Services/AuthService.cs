@@ -47,11 +47,9 @@ namespace DoubleDuel.Services
             if (user != null)
             {
                 return user;
-            }
-            else
-            {
-                return null;
-            }
+            } 
+            return null;
+            
         }
     }
 }

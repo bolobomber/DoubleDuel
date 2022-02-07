@@ -8,16 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DoubleDuel.DAL;
+using DoubleDuel.DAL.Entities;
 
 namespace DoubleDuel
 {
     public partial class MainWindow : Form
     {
-        public DoubleDuelsContext db;
-        public MainWindow()
+        public User user;
+        public MainWindow(User user)
         {
             InitializeComponent();
-            
+            this.user = user;
+            label2.Text = "Ваше имя" + user.Login;
         }
  
         private void FightBtn_Click(object sender, EventArgs e)
@@ -34,7 +36,7 @@ namespace DoubleDuel
 
         private void ArmBtn_Click(object sender, EventArgs e)
         {
-            var armyManadgement = new ArmyManagement();
+            var armyManadgement = new ArmyManagement(user);
             this.Hide();
             armyManadgement.Show();
         }
