@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DoubleDuel.DAL;
 
 namespace DoubleDuel
 {
     public partial class MainWindow : Form
     {
+        public DoubleDuelsContext db;
         public MainWindow()
         {
             InitializeComponent();
+            
         }
  
         private void FightBtn_Click(object sender, EventArgs e)
@@ -35,5 +38,7 @@ namespace DoubleDuel
             this.Hide();
             armyManadgement.Show();
         }
+
+        
     }
 }

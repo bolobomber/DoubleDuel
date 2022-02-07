@@ -18,7 +18,7 @@ namespace DoubleDuel.Services
             context = new DoubleDuelsContext();
         }
 
-        public void Regestration(string login, string password)
+        public bool Regestration(string login, string password)
         {
 
             if (context.Users.Where(usr => usr.Login == login)
@@ -31,11 +31,11 @@ namespace DoubleDuel.Services
                     Password = password
                 });
                 context.SaveChanges();
-                MessageBox.Show($"пользователь с именем {login} успешно зарегестрирован");
+                return true;
             }
             else
             {
-                MessageBox.Show($"пользователь {login} уже есть попробуйте ввести другой логин");
+                return false;
             }
         }
 

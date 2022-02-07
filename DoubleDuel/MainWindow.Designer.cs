@@ -34,6 +34,8 @@ namespace DoubleDuel
             this.FightBtn = new System.Windows.Forms.Button();
             this.ArmBtn = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Namelbl
@@ -86,12 +88,35 @@ namespace DoubleDuel
             this.Exit.UseVisualStyleBackColor = false;
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(619, 295);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 42);
+            this.label1.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Snap ITC", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(619, 264);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 30);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "label2";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.ArmBtn);
             this.Controls.Add(this.FightBtn);
@@ -111,5 +136,7 @@ namespace DoubleDuel
         private System.Windows.Forms.Button FightBtn;
         private System.Windows.Forms.Button ArmBtn;
         private System.Windows.Forms.Button Exit;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
     }
 }

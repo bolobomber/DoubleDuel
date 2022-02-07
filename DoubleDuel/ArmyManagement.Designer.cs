@@ -32,6 +32,7 @@ namespace DoubleDuel
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArmyManagement));
             this.label1 = new System.Windows.Forms.Label();
             this.InMainBtn = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -40,7 +41,7 @@ namespace DoubleDuel
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Snap ITC", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(556, 365);
+            this.label1.Location = new System.Drawing.Point(556, 247);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 30);
             this.label1.TabIndex = 0;
@@ -60,12 +61,22 @@ namespace DoubleDuel
             this.InMainBtn.UseVisualStyleBackColor = false;
             this.InMainBtn.Click += new System.EventHandler(this.InMainBtn_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(565, 327);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(151, 28);
+            this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // ArmyManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.InMainBtn);
             this.Controls.Add(this.label1);
             this.Name = "ArmyManagement";
@@ -81,5 +92,6 @@ namespace DoubleDuel
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button InMainBtn;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

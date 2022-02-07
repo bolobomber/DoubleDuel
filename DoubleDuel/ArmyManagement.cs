@@ -23,5 +23,11 @@ namespace DoubleDuel
             this.Hide();
             mainWondow.Show();
         }
+
+        
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
